@@ -1,0 +1,6 @@
+{
+  "name": "ALASHO | The Future of Fit",
+  "description": "Next-generation luxury menswear platform featuring 60-second browser body scanning, 3D virtual try-on avatars with heatmaps, made-to-measure tailoring, peer-to-peer fit marketplace, and AI styling.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
