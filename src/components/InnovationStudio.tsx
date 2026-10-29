@@ -39,7 +39,7 @@ export const InnovationStudio: React.FC<InnovationStudioProps> = ({ userMeasurem
   const voiceSocketRef = useRef<WebSocket | null>(null);
 
   // 2. Multi-turn Chatbot State
-  const [chatModel, setChatModel] = useState<'gemini-3.8-flash' | 'gemini-3.1-flash-lite'>('gemini-3.8-flash');
+  const [chatModel, setChatModel] = useState<'gemini-2.5-flash' | 'gemini-3.8-flash' | 'gemini-3.1-flash-lite'>('gemini-2.5-flash');
   const [chatMessages, setChatMessages] = useState<Array<{ role: 'user' | 'model'; text: string }>>([
     { role: 'model', text: 'Good day. I am your ALASHO executive tailoring consultant. How may I refine your silhouette today?' }
   ]);
@@ -376,8 +376,9 @@ export const InnovationStudio: React.FC<InnovationStudioProps> = ({ userMeasurem
               </span>
               <div className="flex items-center gap-1.5">
                 {[
-                  { id: 'gemini-3.8-flash', label: 'gemini-3.8-flash (General Luxury Depth)' },
-                  { id: 'gemini-3.1-flash-lite', label: 'gemini-3.1-flash-lite (Fast Tasks)' },
+                  { id: 'gemini-2.5-flash', label: 'gemini-2.5-flash (Fast & Free Tier)' },
+                  { id: 'gemini-3.8-flash', label: 'gemini-3.8-flash (Luxury Depth)' },
+                  { id: 'gemini-3.1-flash-lite', label: 'gemini-3.1-flash-lite' },
                 ].map((m) => (
                   <button
                     key={m.id}

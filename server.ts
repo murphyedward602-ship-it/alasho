@@ -37,14 +37,14 @@ if (apiKey) {
 // 1. Multi-turn Gemini Chatbot Endpoint
 app.post('/api/stylist/chat', async (req: Request, res: Response) => {
   try {
-    const { message, history, model = 'gemini-3.8-flash', systemInstruction, userMeasurements, wardrobeItems } = req.body;
+    const { message, history, model = 'gemini-2.5-flash', systemInstruction, userMeasurements, wardrobeItems } = req.body;
 
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Supported free/standard models per guideline
-    const chosenModel = model === 'gemini-3.1-flash-lite' ? 'gemini-3.1-flash-lite' : 'gemini-3.8-flash';
+    // Supported models: gemini-2.5-flash, gemini-2.5-pro, gemini-3.8-flash, gemini-3.1-flash-lite
+    const chosenModel = model || 'gemini-2.5-flash';
 
     if (!ai) {
       const fallbackReply = generateFallbackStylistResponse(message, userMeasurements);
